@@ -9,7 +9,7 @@ Clustervis is a Python package for visualizing clustering results using a Baggin
 
 To install Clustervis, clone the repository and install it using pip:
 ```sh
-pip install .
+pip install clustervis
 ```
 
 ## Usage
