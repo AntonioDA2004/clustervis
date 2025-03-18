@@ -15,5 +15,9 @@ bagging_classifier.fit(X, y)
 # Step 3: Define some colors for each class (e.g., for 4 classes)
 colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0)]  # Red, Green, Blue, Yellow
 
-# Step 4: Plot the decision boundary
-plot_decision_boundary(X, bagging_classifier, colors, 50)
+# Step 4: Declare the path to save the plot (optional)
+path = "/data/notebook_files" # Example path for Jetbrains Datalore
+filename = "classifier.png"
+
+# Step 5: Plot the decision boundary
+plot_decision_boundary(X, bagging_classifier, colors, 100, path, filename)
