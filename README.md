@@ -2,6 +2,8 @@
 
 Clustervis is a Python package for visualizing clustering results. It provides a visual representation of decision boundaries.
 
+![classifier.png](classifier.png)
+
 ## Features
 - Visualize decision boundaries with color-coded cluster regions.
 
