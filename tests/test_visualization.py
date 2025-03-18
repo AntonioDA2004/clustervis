@@ -13,7 +13,7 @@ bagging_classifier = BaggingClassifier(estimator=base_estimator, n_estimators=8,
 bagging_classifier.fit(X, y)
 
 # Step 3: Define some colors for each class (e.g., for 4 classes)
-colors = [(1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 1, 0)]  # Red, Green, Blue, Yellow
+colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0)]  # Red, Green, Blue, Yellow
 
 # Step 4: Plot the decision boundary
 plot_decision_boundary(X, bagging_classifier, colors, 50)
