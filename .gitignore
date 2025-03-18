@@ -1,2 +1,4 @@
 clustervis.egg-info
 dist
+__pycache__/
+*.pyc
