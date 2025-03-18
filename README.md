@@ -57,4 +57,4 @@ This project is licensed under the MIT License.
 
 - **Antonio De Angelis**  
 - **Email:** deangelis.antonio122@gmail.com  
-- **GitHub:** https://github.com/antonioda2004/clustervis
+- **PyPI:** [https://pypi.org/project/clustervis/](https://pypi.org/project/clustervis/)
