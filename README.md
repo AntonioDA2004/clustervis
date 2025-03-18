@@ -9,7 +9,7 @@ Clustervis is a Python package for visualizing clustering results. It provides a
 
 ## Installation
 
-To install Clustervis, clone the repository and install it using pip:
+To install Clustervis you can use pip:
 ```sh
 pip install clustervis
 ```
