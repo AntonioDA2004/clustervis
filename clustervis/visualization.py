@@ -5,7 +5,7 @@ from .colors import compute_weighted_rgb
 
 def plot_decision_boundary(X, classifier, colors, resolution=50):
     """
-    Plot the decision boundary of a trained classifier with weighted RGB visualization.
+    Plot the decision boundary of a classifier with weighted RGB visualization.
     """
     plt.figure(figsize=(6, 6))
 
@@ -31,5 +31,5 @@ def plot_decision_boundary(X, classifier, colors, resolution=50):
 
     plt.xlabel('X1')
     plt.ylabel('X2')
-    plt.title('Bagging Classifier Decision Boundaries')
+    plt.title('Classifier Model Decision Boundaries')
     plt.show()

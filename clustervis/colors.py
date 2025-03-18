@@ -1,6 +1,6 @@
 def compute_weighted_rgb(weights, colors):
     """
-    Compute the weighted RGB value based on classifier votes.
+    Compute the weighted RGB value for each pixel.
     """
     total_weight = sum(weights)
     if total_weight == 0:
