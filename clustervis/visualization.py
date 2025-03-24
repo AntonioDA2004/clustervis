@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from clustervis.colors import compute_weighted_rgb
 
-def plot_decision_boundary(X, classifier, colors, resolution, path=None, filename=""):
+def plot_decision_boundaries(X, classifier, colors, resolution, path=None, filename=""):
     """
     Plot the decision boundary of a classifier with weighted RGB visualization.
     """

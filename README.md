@@ -6,6 +6,7 @@ Clustervis is a Python package for visualizing clustering results. It provides a
 
 ## Features
 - Visualize decision boundaries with color-coded cluster regions.
+- Save the plot in a path as an image (optional).
 
 ## Installation
 
@@ -17,7 +18,7 @@ pip install clustervis
 ## Usage
 
 ```python
-from clustervis import plot_decision_boundary
+from clustervis import plot_decision_boundaries
 
 from sklearn.datasets import make_blobs
 from sklearn.ensemble import BaggingClassifier
@@ -39,7 +40,7 @@ path = "/data/notebook_files" # Example path for Jetbrains Datalore
 filename = "classifier.png"
 
 # Step 5: Plot the decision boundary
-plot_decision_boundary(X, bagging_classifier, colors, 100, path, filename)
+plot_decision_boundaries(X, bagging_classifier, colors, 100, path, filename)
 ```
 
 ## Running Tests

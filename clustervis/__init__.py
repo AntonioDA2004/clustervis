@@ -1,1 +1,1 @@
-from .visualization import plot_decision_boundary
+from .visualization import plot_decision_boundaries
