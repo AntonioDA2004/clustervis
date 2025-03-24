@@ -2,9 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from clustervis.colors import compute_weighted_rgb
 
-def plot_decision_boundaries(X, classifier, colors, resolution, plotTitle, path=None, filename=""):
+def plot_decision_boundaries(X, ensembleClassifier, colors, resolution, plotTitle, plotPath=None, filename=""):
     """
-    Plot the decision boundary of a classifier with weighted RGB visualization.
+    Plot the decision boundary of an ensemble classifier with weighted RGB visualization.
     """
     plt.figure(figsize=(6, 6))
 
@@ -20,19 +20,19 @@ def plot_decision_boundaries(X, classifier, colors, resolution, plotTitle, path=
     for i in range(xx.shape[0]):
         for j in range(yy.shape[0]):
             point = np.array([[xx[i, j], yy[i, j]]])
-            predictions = [est.predict(point)[0] for est in classifier.estimators_]
+            predictions = [est.predict(point)[0] for est in ensembleClassifier.estimators_]
             class_weights = [predictions.count(c) for c in range(len(colors_normalized))]
             rgb_grid[i, j] = compute_weighted_rgb(class_weights, colors_normalized)
 
     plt.imshow(rgb_grid, extent=(min_x - 1, max_x + 1, min_y - 1, max_y + 1), origin='lower')
 
-    point_predictions = classifier.predict(X)
+    point_predictions = ensembleClassifier.predict(X)
     point_colors = np.array([colors_normalized[p] for p in point_predictions])
     plt.scatter(X[:, 0], X[:, 1], c=point_colors, edgecolor='black', s=20)
 
     plt.xlabel('X1')
     plt.ylabel('X2')
     plt.title(plotTitle)
-    if path is not None:
-        plt.savefig(f"{path}/{filename}")
+    if plotPath is not None:
+        plt.savefig(f"{plotPath}/{filename}")
     plt.show()

@@ -20,8 +20,8 @@ plotTitle = 'RGB Clustering Decision Boundaries'
 resolution = 100
 
 # Step 5: Declare a path to save the plot
-path = "C:/Users/anton/Desktop/Antonio/University/Programming/IntelliJ/Projects/University/GitHub/clustervis" # Example path for Jetbrains Datalore
+plotPath = "/data/notebook_files" # Example path for Jetbrains Datalore
 filename = "classifier.png"
 
 # Step 6: Plot the decision boundary and save it
-plot_decision_boundaries(X, bagging_classifier, colors, resolution, plotTitle, path, filename)
+plot_decision_boundaries(X, bagging_classifier, colors, resolution, plotTitle, plotPath, filename)
