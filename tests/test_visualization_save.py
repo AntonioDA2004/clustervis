@@ -15,9 +15,13 @@ bagging_classifier.fit(X, y)
 # Step 3: Define some colors for each class (e.g., for 4 classes)
 colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0)]  # Red, Green, Blue, Yellow
 
-# Step 4: Declare a path to save the plot (optional)
-path = "/data/notebook_files" # Example path for Jetbrains Datalore
+# Step 4: Declare the name of the plot and its resolution
+plotTitle = 'RGB Clustering Decision Boundaries'
+resolution = 100
+
+# Step 5: Declare a path to save the plot
+path = "C:/Users/anton/Desktop/Antonio/University/Programming/IntelliJ/Projects/University/GitHub/clustervis" # Example path for Jetbrains Datalore
 filename = "classifier.png"
 
-# Step 5: Plot the decision boundary and save it
-plot_decision_boundaries(X, bagging_classifier, colors, 100, path, filename)
+# Step 6: Plot the decision boundary and save it
+plot_decision_boundaries(X, bagging_classifier, colors, resolution, plotTitle, path, filename)

@@ -15,5 +15,9 @@ bagging_classifier.fit(X, y)
 # Step 3: Define some colors for each class (e.g., for 4 classes)
 colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0)]  # Red, Green, Blue, Yellow
 
-# Step 4: Plot the decision boundary
-plot_decision_boundaries(X, bagging_classifier, colors, 100)
+# Step 4: Declare the name of the plot and its resolution
+plotTitle = 'RGB Clustering Decision Boundaries'
+resolution = 100
+
+# Step 5: Plot the decision boundary and save it
+plot_decision_boundaries(X, bagging_classifier, colors, resolution, plotTitle)
