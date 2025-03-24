@@ -73,7 +73,7 @@ colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0)]  # Red, Green, B
 plotTitle = 'RGB Clustering Decision Boundaries'
 resolution = 100
 
-# Step 5: Plot the decision boundary and save it
+# Step 5: Plot the decision boundary
 plot_decision_boundaries(X, bagging_classifier, colors, resolution, plotTitle)
 ```
 
