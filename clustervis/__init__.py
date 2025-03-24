@@ -1,1 +1,1 @@
-from .visualization import plot_decision_boundaries
+from .visualization import ensemble_classifier_plot, base_classifier_plot
