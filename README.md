@@ -2,8 +2,10 @@
 
 Clustervis is a Python package for visualizing clustering results from a classifier. It provides a visual representation of decision boundaries.
 
-![Bagging Classifier](baggingClassifier.png)
-![KNN Classifiers](KNNClassifiers.png)
+<div align="center">
+  <img src="baggingClassifier.png" alt="Bagging Classifier"/>
+  <img src="KNNClassifiers.png" alt="KNN Classifiers"/>
+</div>
 
 ## Features
 - Visualize decision boundaries with color-coded cluster regions.
