@@ -1,4 +1,6 @@
-# Clustervis
+# Clustervis 
+
+[![PyPI Downloads](https://static.pepy.tech/badge/clustervis)](https://pepy.tech/projects/clustervis) [![Socket.dev](https://socket.dev/api/badge/pypi/package/clustervis)](https://socket.dev/pypi/package/clustervis)
 
 Clustervis is a Python package for visualizing clustering results from a classifier. It provides a visual representation of decision boundaries.
 
