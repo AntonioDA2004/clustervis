@@ -53,10 +53,10 @@ show = True
 plotPath = "/data/notebook_files" # Example path for JetBrains Datalore
 fileName = "classifier.png"
 
-# Step 7: Create a figure and an axes
+# Step 6: Create a figure and a set of axes
 fig, ax = plt.subplots()
 
-# Step 8: Plot the decision boundary and save it
+# Step 7: Plot the decision boundary and save it
 ensemble_classifier_plot(X, bagging_classifier, colors, resolution, plotTitle, show, ax, plotPath, fileName)
 ```
 
