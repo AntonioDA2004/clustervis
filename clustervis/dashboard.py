@@ -6,25 +6,32 @@ from sklearn.ensemble import BaggingClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.decomposition import PCA
 
-def run_clustervis_dashboard(X_data, y_labels, user_colors):
+def run_clustervis_dashboard(X_data, y_labels, user_colors, preprocessor=None, model=None):
     """
     Run an interactive dashboard for clustering visualization, along with a probability table.
     """
-    # 1. Data preparation (PCA)
-    pca = PCA(n_components=2)
-    X_PCA = pca.fit_transform(X_data)
+    # 1. Flexible Data Preparation
+    # Default to PCA if no preprocessor is provided
+    if preprocessor is None:
+        preprocessor = PCA(n_components=2)
 
-    # 2. Model training
-    model = BaggingClassifier(
-        estimator=KNeighborsClassifier(n_neighbors=5),
-        n_estimators=10, max_samples=0.05, n_jobs=-1, random_state=42
-    )
-    model.fit(X_PCA, y_labels)
+    # Fit and transform the data
+    X_reduced = preprocessor.fit_transform(X_data)
+
+    # 2. Flexible Model Training
+    # Default to a BaggingClassifier if no model is provided
+    if model is None:
+        model = BaggingClassifier(
+            estimator=KNeighborsClassifier(n_neighbors=5),
+            n_estimators=10, max_samples=0.05, n_jobs=-1, random_state=42
+        )
+
+    model.fit(X_reduced, y_labels)
 
     # 3. Inner function to construct the initial figure
     def build_figure():
         res = 120
-        y_pts, x_pts = X_PCA[:, 0], X_PCA[:, 1]
+        y_pts, x_pts = X_reduced[:, 0], X_reduced[:, 1]
         x_min, x_max = x_pts.min() - 1, x_pts.max() + 1
         y_min, y_max = y_pts.min() - 1, y_pts.max() + 1
         xx, yy = np.meshgrid(np.linspace(x_min, x_max, res), np.linspace(y_min, y_max, res))

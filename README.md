@@ -32,12 +32,15 @@ from sklearn.datasets import make_blobs
 from clustervis import run_clustervis_dashboard
 import numpy as np
 
-X, y = make_blobs(n_samples=400, centers=5, cluster_std=1.0, random_state=42)
+# Step 1: Generate synthetic data
+X, y = make_blobs(n_samples=400, centers=5, random_state=42, cluster_std=1.0)
 
+# Step 2: Declare custom user colors for the clusters 
 user_colors = np.array([
     [231, 76, 60], [241, 196, 15], [52, 152, 219], [46, 204, 113], [155, 89, 182]
 ])
 
+# Step 3: Run the dashboard (you can optionally use a custom preprocessor and model)
 run_clustervis_dashboard(X, y, user_colors)
 ```
 
