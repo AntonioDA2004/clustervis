@@ -2,15 +2,18 @@
 
 [![PyPI Downloads](https://static.pepy.tech/badge/clustervis)](https://pepy.tech/projects/clustervis) [![Socket.dev](https://socket.dev/api/badge/pypi/package/clustervis)](https://socket.dev/pypi/package/clustervis)
 
-Clustervis is a Python package for visualizing clustering results from a classifier. It provides a visual representation of decision boundaries.
+Clustervis is a Python package for visualizing clustering results from a classifier. 
+It provides a visual representation of decision boundaries in the form of a dashboard or as an image.
 
 <div align="center">
-  <img src="baggingClassifier.png" alt="Bagging Classifier"/>
-  <img src="KNNClassifiers.png" alt="KNN Classifiers"/>
+  <img src="dashboardExample.png" width="95%" alt="Clustervis Dashboard Preview"/>
+  <img src="baggingClassifier.png" width="38%"alt="Bagging Classifier"/>
+  <img src="KNNClassifiers.png" width="57%" alt="KNN Classifiers"/>
 </div>
 
 ## Features
 - Visualize decision boundaries with color-coded cluster regions.
+- Visualize statistics such as the probabilities of the data points being in clusters.
 - Save the plot in a path as an image (optional).
 
 ## Installation
@@ -21,6 +24,22 @@ pip install clustervis
 ```
 
 ## Usage
+
+### Dashboard
+
+```python
+from sklearn.datasets import make_blobs
+from clustervis import run_clustervis_dashboard
+import numpy as np
+
+X, y = make_blobs(n_samples=400, centers=5, cluster_std=1.0, random_state=42)
+
+user_colors = np.array([
+    [231, 76, 60], [241, 196, 15], [52, 152, 219], [46, 204, 113], [155, 89, 182]
+])
+
+run_clustervis_dashboard(X, y, user_colors)
+```
 
 ### Ensemble classifier (Save enabled)
 
