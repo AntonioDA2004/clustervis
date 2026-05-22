@@ -9,7 +9,18 @@ from sklearn.decomposition import PCA
 def run_clustervis_dashboard(X_data, y_labels, user_colors, preprocessor=None, model=None):
     """
     Run an interactive dashboard for clustering visualization, along with a probability table.
+    Now safely handles 1D, 2D, and multi-dimensional inputs seamlessly.
     """
+    # 🚀 FIX 1: Robustly handle 1D arrays and pad them to 2D to prevent PCA/Meshgrid crashes
+    X_data = np.array(X_data)
+    if X_data.ndim == 1:
+        X_data = X_data.reshape(-1, 1)
+    if X_data.shape[1] == 1:
+        X_data = np.hstack((X_data, np.zeros((X_data.shape[0], 1))))
+
+    # 🚀 FIX 2: Force conversion to NumPy array so matrix multiplication (@) doesn't fail on raw lists
+    user_colors = np.array(user_colors)
+
     # 1. Flexible Data Preparation
     # Default to PCA if no preprocessor is provided
     if preprocessor is None:
